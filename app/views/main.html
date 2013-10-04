@@ -11,12 +11,13 @@
 
 <div id="gameboard">
 	<div ng-repeat="row in repeatTicBoard">
-		<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}" ng-repeat="cell in row"
-		ng-click="clickSquare($parent.$index, $index)">	
+
+		<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}"  ng-repeat="sqr in row"
+		ng-click="clickSquare(sqr);" 
+		>	
 		</div>
 
-		
-
+	
 
 		<div class="clearfix"></div>
 	</div>
