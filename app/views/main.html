@@ -3,15 +3,26 @@
 
 	<header>Tic Cat Toe</header>
 
-	<div id="gameboard">
 
-			<!-- <div id="startmessage" class="popup"> 
-				<h1>START PLAYING RIGHT MEOW</h1>
-			</div> -->
+<!-- <div id="startmessage" class="popup"> 
+	<h1>START PLAYING RIGHT MEOW</h1>
+	</div> -->
 
 
+<div id="gameboard">
+	<div ng-repeat="row in repeatTicBoard">
+		<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}" ng-repeat="cell in row"
+		ng-click="clickSquare($parent.$index, $index)">	
+		</div>
+
+		
+
+
+		<div class="clearfix"></div>
+	</div>
+</div>
  
-			<div id="box1_1" class="sqr" onclick="playBox()"></div>
+<!-- 			<div id="box1_1" class="sqr" onclick="playBox()"></div>
 			<div id="box1_2" class="sqr" onclick="playBox()"></div>
 			<div id="box1_3" class="sqr" onclick="playBox()"></div>
 	  		<div class="clear"></div>
@@ -25,12 +36,13 @@
 			<div id="box3_2" class="sqr" onclick="playBox()"></div>
 			<div id="box3_3" class="sqr" onclick="playBox()"></div>
 	  		<div class="clear"></div>
-	  		
-	</div>
+	  		 -->
+	
 
-
-
-
-	<footer>I am a footer</footer>
+	<footer>Play right MEOW!!!</footer>
 
 </div>
+
+
+
+

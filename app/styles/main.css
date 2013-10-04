@@ -42,7 +42,7 @@ header {
 
 }
 
-.popup {
+/*.popup {
   width: 70%;
   height: 150px;
   text-align: center;
@@ -52,7 +52,7 @@ header {
   margin-top: 78px;
   margin-left: 20px;
   opacity: 0.9;
-}
+}*/
 
 h1 {
   margin-top: 38px;
@@ -66,11 +66,9 @@ h1 {
   float: left;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 50px;
- 
-
-
 }
 
+/*
 #box1_1 {
   border-bottom: 6px solid #666666;
   border-right: 6px solid #666666;
@@ -126,7 +124,7 @@ h1 {
   border: none;
   margin: 0px;
 
-}
+}*/
 
 
 
@@ -135,7 +133,12 @@ h1 {
     clear: both;
 }
 
-
+.topLine{
+  border-top: 6px solid #666666;
+}
+.leftLine{
+  border-left: 6px solid #666666;
+}
 
 
 
