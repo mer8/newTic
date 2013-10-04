@@ -7,15 +7,30 @@ $scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
 
 var playerTurn = 1;
 
-  $scope.clickSquare = function(cell) {
-	
+  $scope.findImg = function(cell) { 
+		
+		switch(cell.value)
+		{
+			case "X":
+			return "../../images/cat2pic.gif";
+			case "O":
+			return "../../images/typingcat.gif";
+			case "":
+			return "../../images/1x1.png";
+		}
+	};
+
+	$scope.clickSquare = function(cell) {
 
 		if(playerTurn % 2 == 1) 
-			cell.value = "<img src='../../images/cat2pic.gif' />";
+			cell.value = "X";
 		else 
-			cell.value = "<img src='../../images/typingcat.gif' />";
+			cell.value = "O";
 
 		++playerTurn;
+
+
+	};
 
 
 
@@ -75,7 +90,7 @@ var playerTurn = 1;
 
 
 
-};
+
 
 
 
