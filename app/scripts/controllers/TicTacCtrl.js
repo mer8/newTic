@@ -1,3 +1,5 @@
+
+
 function TicTacCtrl($scope){
 	
 $scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
@@ -21,18 +23,80 @@ var playerTurn = 1;
 	};
 
 	$scope.clickSquare = function(cell) {
+		if(cell.value != "")
+			return;
+
+
+
 
 		if(playerTurn % 2 == 1) 
 			cell.value = "X";
 		else 
 			cell.value = "O";
 
-		++playerTurn;
+++playerTurn;
 
+var hasWon = false;
+
+ 	for(c=0;c<=2;++c)
+
+
+{
+// **This is for row and column wins**
+
+ 	if ($scope.repeatTicBoard[0][c].value == $scope.repeatTicBoard[1][c].value && 
+ 		$scope.repeatTicBoard[1][c].value == $scope.repeatTicBoard[2][c].value && 
+ 		$scope.repeatTicBoard[0][c].value != "")
+ 		{
+ 			alert($scope.repeatTicBoard[0][c].value +" won in column " + c);
+ 		location.reload();
+ 		hasWon = true;
+ 		}
+
+
+ 	if ($scope.repeatTicBoard[c][0].value == $scope.repeatTicBoard[c][1].value && 
+ 		$scope.repeatTicBoard[c][1].value == $scope.repeatTicBoard[c][2].value && 
+ 		$scope.repeatTicBoard[c][0].value != "")
+ 		{
+ 			alert($scope.repeatTicBoard[c][0].value +" won in row " + c);
+ 		location.reload();
+ 		hasWon = true;
+ 		}
+
+
+ }
+
+ // **This is for diagonal wins**
+
+  	if ($scope.repeatTicBoard[0][0].value == $scope.repeatTicBoard[1][1].value &&
+ 		$scope.repeatTicBoard[1][1].value == $scope.repeatTicBoard[2][2].value &&
+ 		$scope.repeatTicBoard[2][2].value != "")
+ 		{
+ 			alert($scope.repeatTicBoard[2][2].value +" won in diag " + c);
+ 		location.reload();
+ 		hasWon = true;
+ 		}
+
+ 	if ($scope.repeatTicBoard[0][2].value == $scope.repeatTicBoard[1][1].value &&
+ 		$scope.repeatTicBoard[1][1].value == $scope.repeatTicBoard[2][0].value &&
+ 		$scope.repeatTicBoard[2][0].value != "")
+ 		{
+ 			alert($scope.repeatTicBoard[2][0].value +" won in diag " + c);
+ 		location.reload();
+ 		hasWon = true;
+ 		}
+
+		
+if(playerTurn==10){
+	alert("No winners!")
+	location.reload();
+	hasWon = true;
+}
+		
 
 	};
 
-
+}
 
 
 
@@ -47,7 +111,7 @@ var playerTurn = 1;
 
 // // **This is for row and column wins**
 
-//  	if (this.repeatTicBoard[0][c] == this.repeatTicBoard[1][c] && 
+//  	if (repeatTicBoard.value[0][c] == this.repeatTicBoard[1][c] && 
 //  		this.repeatTicBoard[1][c] == this.repeatTicBoard[2][c] && 
 //  		this.repeatTicBoard[0][c] != "")
 //  		{
@@ -94,7 +158,7 @@ var playerTurn = 1;
 
 
 
-}
+
 
 
 
