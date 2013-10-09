@@ -1,13 +1,17 @@
 
 
-function TicTacCtrl($scope){
-	
+function TicTacCtrl($scope, angularFire){
+	var ref = new Firebase("https://my-maintic-mer8.firebaseio.com/repeatTicBoard");
+
+
 $scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
   [{value:''}, {value:''}, {value:''}],
   [{value:''}, {value:''}, {value:''}]];
 
 
 var playerTurn = 1;
+
+  angularFire(ref, $scope, "repeatTicBoard");
 
   $scope.findImg = function(cell) { 
 		
