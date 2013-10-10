@@ -19,9 +19,9 @@
 			</div>
 		</div>
 		<div id="winMessage" class="popup" ng-show="hasWon" ng-model="someone" ng-hide="winmessage==''"> 
-			<h1>Blah</h1>
+			<!-- <h1>Blah</h1> -->
 			{{ winmessage }}
-			<br><button ng-click="winmessage=''">OK</button>
+			<br><button ng-click="winmessage=''; room.hasWon=false">OK</button>
 		</div>
 	</div>
  
@@ -42,7 +42,7 @@
 	  		 -->
 	
 
-	<footer>Play right MEOW!!!</footer>
+	<footer>Play right MEOW</footer>
 </div>
 
 

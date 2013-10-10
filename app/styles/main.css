@@ -1,6 +1,6 @@
 header {
     text-align: center;
-    border-bottom: 5px solid #666666;
+    border-bottom: 3px solid #666666;
     padding: 20px;
     margin: 15px;
     margin-left: auto;
@@ -51,7 +51,7 @@ header {
   background-color: #666666;
   margin-top: 78px;
   margin-left: 20px;
-  opacity: 0.7;
+  opacity: 0.9;
   color: #f5f5f5;
   font-size: 20px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -148,7 +148,7 @@ h1 {
 
 footer {
     text-align: center;
-    border-top: 5px solid #666666;
+    border-top: 3px solid #666666;
     padding: 20px;
     margin: 15px;
     margin-left: auto;

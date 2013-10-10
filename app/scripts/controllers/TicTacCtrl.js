@@ -13,15 +13,65 @@ angular.module('newTicApp')
   $scope.winmessage = "";
 
 	var database = new Firebase("https://my-maintic-mer8.firebaseio.com/room/");
+	// BINDING TO FIREBASE
+	//$scope.games = [];
+	//$scope.queue = {};
+
+
+
 	$scope.room={};
+
+//var games = new Firebase("https://my-maintic-mer8.firebaseio.com/games");
+//angularFire(games, $scope, "games").then(function () {  
+
+
+//var queue = new Firebase("https://my-maintic-mer8.firebaseio.com/queue");
+//angularFire(queue, $scope, "games").then(function () {    blah blah all that stuff like before.... end paren at end ***move down***
+
+
 	var promise = angularFire(database, $scope, "room");
 
 promise.then( function() {
+// ***pick up here*** 
+//if ($scope.room.gameId == undefined) {
+	//console.log("I'm player 1");
+	//$scope.player = "p1";
+	//var newGame = {
+		//board: ["","",""],
+		//turn: 'p1',
+		//win: false'
+		//turnCount:0
+//};
+
+//$scope.gameID = $scope.games.push(newGame) - 1;
+//$scope.queue.gameId = $scope.gameId;
+//console.log("Player 1's game is: " + $scope.gameId);
+
+//CREATE GAME
+
+
+
+//} else {
+		//console.log("I'm player 2");
+		//$scope.player = "p2";
+
+//$scope.gameId = $scope.queue.gameId;
+
+		
+
+//READ GAME ID FROM QUEUE
+
+//$scope.queue = {};
+//console.log
+//}
+//});
+
 	$scope.room={
 	repeatTicBoard: [[{value:''}, {value:''}, {value:''}],
-  [{value:''}, {value:''}, {value:''}],
-  [{value:''}, {value:''}, {value:''}]],
-  playerTurn: 1
+	  [{value:''}, {value:''}, {value:''}],
+	  [{value:''}, {value:''}, {value:''}]],
+	  playerTurn: 1,
+	  hasWon: false,
 };
 
 
@@ -58,10 +108,7 @@ promise.then( function() {
 
 var hasWon = false;
 
- 	for(var c=0;c<=2;++c)
-
-
-{
+ 	for(var c=0;c<=2;++c) {
 // **This is for row and column wins**
 
  	if ($scope.room.repeatTicBoard[0][c].value == $scope.room.repeatTicBoard[1][c].value && 
@@ -70,7 +117,7 @@ var hasWon = false;
  		{
  			$scope.winmessage = ($scope.room.repeatTicBoard[0][c].value +" won in column " + c);
  		reset();
- 		hasWon = true;
+ 		$scope.room.hasWon = true;
  		}
 
 
@@ -80,7 +127,7 @@ var hasWon = false;
  		{
  			$scope.winmessage = ($scope.room.repeatTicBoard[c][0].value +" won in row " + c);
  		reset();
- 		hasWon = true;
+ 		$scope.room.hasWon = true;
  		}
 
 
@@ -94,7 +141,7 @@ var hasWon = false;
  		{
  			$scope.winmessage = ($scope.room.repeatTicBoard[2][2].value +" won in diag " + c);
  		reset();
- 		hasWon = true;
+ 		$scope.room.hasWon = true;
  		}
 
  	if ($scope.room.repeatTicBoard[0][2].value == $scope.room.repeatTicBoard[1][1].value &&
@@ -103,29 +150,38 @@ var hasWon = false;
  		{
  			$scope.winmessage = ($scope.room.repeatTicBoard[2][0].value +" won in diag " + c);
  		reset();
- 		hasWon = true;
+ 		$scope.room.hasWon = true;
  		}
 
 		
 	if($scope.room.playerTurn==10){
 		$scope.winmessage = ("No winners!");
 		reset();
-		hasWon = true;
+		$scope.room.hasWon = true;
 		}
 		
 
 	function reset() {
-			$scope.room.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}]];
+		$scope.room.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
+			[{value:''}, {value:''}, {value:''}],
+			[{value:''}, {value:''}, {value:''}]];
+
+	  	$scope.room.playerTurn = 1;
+	  	var hasWon = false;
 		};
 	
+
+
+
+
+
 
 	}
 
 
 
 });
+
 }]);
 
 
