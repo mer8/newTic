@@ -8,7 +8,7 @@
 	</div> -->
 
 	<div id="gameboard">
-		<div ng-repeat="row in repeatTicBoard">
+		<div ng-repeat="row in room.repeatTicBoard">
 			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}"  
 				ng-repeat="cell in row"
 				ng-click="clickSquare(cell);" 
