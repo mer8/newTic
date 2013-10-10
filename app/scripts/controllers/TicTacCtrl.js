@@ -21,6 +21,7 @@ promise.then( function() {
 var playerTurn = 1;
 
   angularFire(database, $scope, "repeatTicBoard");
+//you need to add "games" into where "repeatTicBoard" and then {an object, which is your game*}
 
   $scope.findImg = function(cell) { 
 		
@@ -100,18 +101,18 @@ var hasWon = false;
  		}
 
 		
-if(playerTurn==10){
-	$scope.winmessage = ("No winners!");
-	reset();
-	hasWon = true;
-}
+	if(playerTurn==10){
+		$scope.winmessage = ("No winners!");
+		reset();
+		hasWon = true;
+		}
 		
 
 	function reset() {
-		$scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
-  [{value:''}, {value:''}, {value:''}],
-  [{value:''}, {value:''}, {value:''}]];
-	};
+			$scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
+	  [{value:''}, {value:''}, {value:''}],
+	  [{value:''}, {value:''}, {value:''}]];
+		};
 	
 
 	}
@@ -119,7 +120,7 @@ if(playerTurn==10){
 
 
 
-	};
+};
 
 
 
