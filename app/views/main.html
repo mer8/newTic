@@ -1,6 +1,5 @@
 
 <div id="container">
-
 	<header>Tic Cat Toe</header>
 
 
@@ -8,25 +7,23 @@
 	<h1>START PLAYING RIGHT MEOW</h1>
 	</div> -->
 
-
-<div id="gameboard">
-	<div ng-repeat="row in repeatTicBoard">
-
-		<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}"  
-		ng-repeat="cell in row"
-		ng-click="clickSquare(cell);" 
-		>	
-
-
-		<img ng-src="{{findImg(cell)}}" />
-
+	<div id="gameboard">
+		<div ng-repeat="row in repeatTicBoard">
+			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}"  
+				ng-repeat="cell in row"
+				ng-click="clickSquare(cell);" 
+				>	
+				<img ng-src="{{findImg(cell)}}" />
+			</div>
+			<div class="clearfix">
+			</div>
 		</div>
-
-	
-
-		<div class="clearfix"></div>
+		<div id="winMessage" class="popup" ng-show="hasWon" ng-model="someone" ng-hide="winmessage==''"> 
+			<h1>Blah</h1>
+			{{ winmessage }}
+			<br><button ng-click="winmessage=''">OK</button>
+		</div>
 	</div>
-</div>
  
 <!-- 			<div id="box1_1" class="sqr" onclick="playBox()"></div>
 			<div id="box1_2" class="sqr" onclick="playBox()"></div>
@@ -46,7 +43,6 @@
 	
 
 	<footer>Play right MEOW!!!</footer>
-
 </div>
 
 

@@ -1,17 +1,26 @@
 
 
 function TicTacCtrl($scope, angularFire){
-	var ref = new Firebase("https://my-maintic-mer8.firebaseio.com/repeatTicBoard");
 
 
 $scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
   [{value:''}, {value:''}, {value:''}],
   [{value:''}, {value:''}, {value:''}]];
 
+  $scope.winmessage = "";
+
+	var database = new Firebase("https://my-maintic-mer8.firebaseio.com/repeatTicBoard");
+	var promise = angularFire(database, $scope, "repeatTicBoard");
+
+promise.then( function() {
+	$scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
+  [{value:''}, {value:''}, {value:''}],
+  [{value:''}, {value:''}, {value:''}]];
+});
 
 var playerTurn = 1;
 
-  angularFire(ref, $scope, "repeatTicBoard");
+  angularFire(database, $scope, "repeatTicBoard");
 
   $scope.findImg = function(cell) { 
 		
@@ -52,8 +61,8 @@ var hasWon = false;
  		$scope.repeatTicBoard[1][c].value == $scope.repeatTicBoard[2][c].value && 
  		$scope.repeatTicBoard[0][c].value != "")
  		{
- 			alert($scope.repeatTicBoard[0][c].value +" won in column " + c);
- 		location.reload();
+ 			$scope.winmessage = ($scope.repeatTicBoard[0][c].value +" won in column " + c);
+ 		reset();
  		hasWon = true;
  		}
 
@@ -62,8 +71,8 @@ var hasWon = false;
  		$scope.repeatTicBoard[c][1].value == $scope.repeatTicBoard[c][2].value && 
  		$scope.repeatTicBoard[c][0].value != "")
  		{
- 			alert($scope.repeatTicBoard[c][0].value +" won in row " + c);
- 		location.reload();
+ 			$scope.winmessage = ($scope.repeatTicBoard[c][0].value +" won in row " + c);
+ 		reset();
  		hasWon = true;
  		}
 
@@ -76,8 +85,8 @@ var hasWon = false;
  		$scope.repeatTicBoard[1][1].value == $scope.repeatTicBoard[2][2].value &&
  		$scope.repeatTicBoard[2][2].value != "")
  		{
- 			alert($scope.repeatTicBoard[2][2].value +" won in diag " + c);
- 		location.reload();
+ 			$scope.winmessage = ($scope.repeatTicBoard[2][2].value +" won in diag " + c);
+ 		reset();
  		hasWon = true;
  		}
 
@@ -85,22 +94,34 @@ var hasWon = false;
  		$scope.repeatTicBoard[1][1].value == $scope.repeatTicBoard[2][0].value &&
  		$scope.repeatTicBoard[2][0].value != "")
  		{
- 			alert($scope.repeatTicBoard[2][0].value +" won in diag " + c);
- 		location.reload();
+ 			$scope.winmessage = ($scope.repeatTicBoard[2][0].value +" won in diag " + c);
+ 		reset();
  		hasWon = true;
  		}
 
 		
 if(playerTurn==10){
-	alert("No winners!")
-	location.reload();
+	$scope.winmessage = ("No winners!");
+	reset();
 	hasWon = true;
 }
 		
 
+	function reset() {
+		$scope.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
+  [{value:''}, {value:''}, {value:''}],
+  [{value:''}, {value:''}, {value:''}]];
+	};
+	
+
+	}
+
+
+
+
 	};
 
-}
+
 
 
 
