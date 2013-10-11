@@ -99,35 +99,35 @@ angular.module('newTicApp')
 
 
 
-		if($scope.room.playerTurn % 2 == 1) 
+		if($scope.games[$scope.gameId].playerTurn % 2 == 1) 
 			cell.value = "X";
 		else 
 			cell.value = "O";
 
-++$scope.room.playerTurn;
+++$scope.games[$scope.gameId].playerTurn;
 
 var hasWon = false;
 
  	for(var c=0;c<=2;++c) {
 // **This is for row and column wins**
 
- 	if ($scope.games[$scope.gameId][0][c].value == $scope.games[$scope.gameId][1][c].value && 
- 		$scope.games[$scope.gameId][1][c].value == $scope.games[$scope.gameId][2][c].value && 
- 		$scope.games[$scope.gameId][0][c].value != "")
+ 	if ($scope.games[$scope.gameId].board[0][c].value == $scope.games[$scope.gameId].board[1][c].value && 
+ 		$scope.games[$scope.gameId].board[1][c].value == $scope.games[$scope.gameId].board[2][c].value && 
+ 		$scope.games[$scope.gameId].board[0][c].value != "")
  		{
- 			$scope.winmessage = ($scope.games[$scope.gameId][0][c].value +" won in column " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId].board[0][c].value +" won in column " + c);
  		reset();
- 		$scope.room.hasWon = true;
+ 		$scope.games[$scope.gameId].hasWon = true;
  		}
 
 
- 	if ($scope.games[$scope.gameId][c][0].value == $scope.games[$scope.gameId][c][1].value && 
- 		$scope.games[$scope.gameId][c][1].value == $scope.games[$scope.gameId][c][2].value && 
- 		$scope.games[$scope.gameId][c][0].value != "")
+ 	if ($scope.games[$scope.gameId].board[c][0].value == $scope.games[$scope.gameId].board[c][1].value && 
+ 		$scope.games[$scope.gameId].board[c][1].value == $scope.games[$scope.gameId].board[c][2].value && 
+ 		$scope.games[$scope.gameId].board[c][0].value != "")
  		{
- 			$scope.winmessage = ($scope.games[$scope.gameId][c][0].value +" won in row " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId].board[c][0].value +" won in row " + c);
  		reset();
- 		$scope.room.hasWon = true;
+ 		$scope.games[$scope.gameId].hasWon = true;
  		}
 
 
@@ -135,38 +135,38 @@ var hasWon = false;
 
  // **This is for diagonal wins**
 
-  	if ($scope.games[$scope.gameId][0][0].value == $scope.games[$scope.gameId][1][1].value &&
- 		$scope.games[$scope.gameId][1][1].value == $scope.games[$scope.gameId][2][2].value &&
- 		$scope.games[$scope.gameId][2][2].value != "")
+  	if ($scope.games[$scope.gameId].board[0][0].value == $scope.games[$scope.gameId].board[1][1].value &&
+ 		$scope.games[$scope.gameId].board[1][1].value == $scope.games[$scope.gameId].board[2][2].value &&
+ 		$scope.games[$scope.gameId].board[2][2].value != "")
  		{
- 			$scope.winmessage = ($scope.games[$scope.gameId][2][2].value +" won in diag " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId].board[2][2].value +" won in diag " + c);
  		reset();
- 		$scope.room.hasWon = true;
+ 		$scope.games[$scope.gameId].hasWon = true;
  		}
 
- 	if ($scope.games[$scope.gameId][0][2].value == $scope.games[$scope.gameId][1][1].value &&
- 		$scope.games[$scope.gameId][1][1].value == $scope.games[$scope.gameId][2][0].value &&
- 		$scope.games[$scope.gameId][2][0].value != "")
+ 	if ($scope.games[$scope.gameId].board[0][2].value == $scope.games[$scope.gameId].board[1][1].value &&
+ 		$scope.games[$scope.gameId].board[1][1].value == $scope.games[$scope.gameId].board[2][0].value &&
+ 		$scope.games[$scope.gameId].board[2][0].value != "")
  		{
- 			$scope.winmessage = ($scope.games[$scope.gameId][2][0].value +" won in diag " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId].board[2][0].value +" won in diag " + c);
  		reset();
- 		$scope.room.hasWon = true;
+ 		$scope.games[$scope.gameId].hasWon = true;
  		}
 
 		
 	if($scope.room.playerTurn==10){
 		$scope.winmessage = ("No winners!");
 		reset();
-		$scope.room.hasWon = true;
+		$scope.games[$scope.gameId].hasWon = true;
 		}
 		
 
 	function reset() {
-		$scope.room.repeatTicBoard = [[{value:''}, {value:''}, {value:''}],
+		$scope.games[$scope.gameId].board = [[{value:''}, {value:''}, {value:''}],
 			[{value:''}, {value:''}, {value:''}],
 			[{value:''}, {value:''}, {value:''}]];
 
-	  	$scope.room.playerTurn = 1;
+	  	$scope.games[$scope.gameId].playerTurn = 1;
 	  	var hasWon = false;
 		};
 	
