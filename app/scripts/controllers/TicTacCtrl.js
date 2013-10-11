@@ -77,11 +77,11 @@ angular.module('newTicApp')
 				switch(cell.value)
 				{
 					case "X":
-					return "../../images/cat2pic.gif";
+					return "images/cat2pic.gif";
 					case "O":
-					return "../../images/typingcat.gif";
+					return "images/typingcat.gif";
 					case "":
-					return "../../images/1x1.png";
+					return "images/1x1.png";
 				}
 			};
 
