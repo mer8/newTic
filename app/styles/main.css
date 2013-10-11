@@ -42,6 +42,18 @@ header {
 
 }
 
+.x {
+  background-image: url('../../images/cat2pic.gif');
+}
+
+
+
+
+.o {
+  background-image: url('../../images/typingcat.gif');
+
+}
+
 .popup {
   width: 70%;
   height: 150px;

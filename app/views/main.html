@@ -8,8 +8,8 @@
 	</div> -->
 
 	<div id="gameboard">
-		<div ng-repeat="row in room.repeatTicBoard">
-			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0}"  
+		<div ng-repeat="row in games[gameId].board">
+			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0, x: cell.value == 'X', o: cell.value == 'O'}"  
 				ng-repeat="cell in row"
 				ng-click="clickSquare(cell);" 
 				>	

@@ -53,14 +53,14 @@ angular.module('newTicApp')
 
 
 
-	$scope.room = 
-	{
-	repeatTicBoard: [[{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}]],
-	  playerTurn: 1,
-	  hasWon: false,
-	};
+	// $scope.room = 
+	// {
+	// repeatTicBoard: [[{value:''}, {value:''}, {value:''}],
+	//   [{value:''}, {value:''}, {value:''}],
+	//   [{value:''}, {value:''}, {value:''}]],
+	//   playerTurn: 1,
+	//   hasWon: false,
+	// };
 
 
 
@@ -72,18 +72,18 @@ angular.module('newTicApp')
 
 
   
-		 $scope.findImg = function(cell) 
-		  { 
-				switch(cell.value)
-				{
-					case "X":
-					return "images/cat2pic.gif";
-					case "O":
-					return "images/typingcat.gif";
-					case "":
-					return "images/1x1.png";
-				}
-			};
+		 // $scope.findImg = function(cell) 
+		 //  { 
+			// 	switch(cell.value)
+			// 	{
+			// 		case "X":
+			// 		return "images/cat2pic.gif";
+			// 		case "O":
+			// 		return "images/typingcat.gif";
+			// 		case "":
+			// 		return "images/1x1.png";
+			// 	}
+			// };
 
 
 
@@ -111,21 +111,21 @@ var hasWon = false;
  	for(var c=0;c<=2;++c) {
 // **This is for row and column wins**
 
- 	if ($scope.room.repeatTicBoard[0][c].value == $scope.room.repeatTicBoard[1][c].value && 
- 		$scope.room.repeatTicBoard[1][c].value == $scope.room.repeatTicBoard[2][c].value && 
- 		$scope.room.repeatTicBoard[0][c].value != "")
+ 	if ($scope.games[$scope.gameId][0][c].value == $scope.games[$scope.gameId][1][c].value && 
+ 		$scope.games[$scope.gameId][1][c].value == $scope.games[$scope.gameId][2][c].value && 
+ 		$scope.games[$scope.gameId][0][c].value != "")
  		{
- 			$scope.winmessage = ($scope.room.repeatTicBoard[0][c].value +" won in column " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId][0][c].value +" won in column " + c);
  		reset();
  		$scope.room.hasWon = true;
  		}
 
 
- 	if ($scope.room.repeatTicBoard[c][0].value == $scope.room.repeatTicBoard[c][1].value && 
- 		$scope.room.repeatTicBoard[c][1].value == $scope.room.repeatTicBoard[c][2].value && 
- 		$scope.room.repeatTicBoard[c][0].value != "")
+ 	if ($scope.games[$scope.gameId][c][0].value == $scope.games[$scope.gameId][c][1].value && 
+ 		$scope.games[$scope.gameId][c][1].value == $scope.games[$scope.gameId][c][2].value && 
+ 		$scope.games[$scope.gameId][c][0].value != "")
  		{
- 			$scope.winmessage = ($scope.room.repeatTicBoard[c][0].value +" won in row " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId][c][0].value +" won in row " + c);
  		reset();
  		$scope.room.hasWon = true;
  		}
@@ -135,20 +135,20 @@ var hasWon = false;
 
  // **This is for diagonal wins**
 
-  	if ($scope.room.repeatTicBoard[0][0].value == $scope.room.repeatTicBoard[1][1].value &&
- 		$scope.room.repeatTicBoard[1][1].value == $scope.room.repeatTicBoard[2][2].value &&
- 		$scope.room.repeatTicBoard[2][2].value != "")
+  	if ($scope.games[$scope.gameId][0][0].value == $scope.games[$scope.gameId][1][1].value &&
+ 		$scope.games[$scope.gameId][1][1].value == $scope.games[$scope.gameId][2][2].value &&
+ 		$scope.games[$scope.gameId][2][2].value != "")
  		{
- 			$scope.winmessage = ($scope.room.repeatTicBoard[2][2].value +" won in diag " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId][2][2].value +" won in diag " + c);
  		reset();
  		$scope.room.hasWon = true;
  		}
 
- 	if ($scope.room.repeatTicBoard[0][2].value == $scope.room.repeatTicBoard[1][1].value &&
- 		$scope.room.repeatTicBoard[1][1].value == $scope.room.repeatTicBoard[2][0].value &&
- 		$scope.room.repeatTicBoard[2][0].value != "")
+ 	if ($scope.games[$scope.gameId][0][2].value == $scope.games[$scope.gameId][1][1].value &&
+ 		$scope.games[$scope.gameId][1][1].value == $scope.games[$scope.gameId][2][0].value &&
+ 		$scope.games[$scope.gameId][2][0].value != "")
  		{
- 			$scope.winmessage = ($scope.room.repeatTicBoard[2][0].value +" won in diag " + c);
+ 			$scope.winmessage = ($scope.games[$scope.gameId][2][0].value +" won in diag " + c);
  		reset();
  		$scope.room.hasWon = true;
  		}
