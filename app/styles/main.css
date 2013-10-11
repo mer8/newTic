@@ -43,14 +43,14 @@ header {
 }
 
 .x {
-  background-image: url('../../images/cat2pic.gif');
+  background-image: url('/images/cat2pic.gif');
 }
 
 
 
 
 .o {
-  background-image: url('../../images/typingcat.gif');
+  background-image: url('/images/typingcat.gif');
 
 }
 
