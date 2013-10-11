@@ -26,8 +26,8 @@ angular.module('newTicApp')
 	  [{value:''}, {value:''}, {value:''}]],
             turn: 'p1',
             waiting: true,
-            win: false,
-            turnCount: 0
+            hasWon: false,
+            playerTurn: 1
           };
 
           $scope.gameId = $scope.games.push(newGame) - 1;
@@ -177,6 +177,25 @@ var hasWon = false;
 
 
 	} //3
+
+$scope.playMove = function (cell) {
+      if ((!$scope.games[$scope.gameId].waiting) && ($scope.player == $scope.games[$scope.gameId].turn)) {
+        // markCell(cell);
+        if ($scope.player == 'p1') {
+          cell.value = 'X';
+        } else {
+          cell.value = 'O';
+        }
+        // swapPlayers();
+        if ($scope.games[$scope.gameId].turn == 'p1') {
+          $scope.games[$scope.gameId].turn = 'p2';
+        } else {
+          $scope.games[$scope.gameId].turn = 'p1';
+        }
+      }
+    };
+
+
 
  }); //3.1
 
