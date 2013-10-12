@@ -9,11 +9,11 @@
 
 	<div id="gameboard">
 		<div ng-repeat="row in games[gameId].board">
-			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index != 0, x: cell.value == 'X', o: cell.value == 'O'}"  
+			<div ng-class="{sqr:true,topLine:$parent.$index != 0,leftLine:$index !=0, x: cell.value == 'X', o: cell.value == 'O'}"  
 				ng-repeat="cell in row"
 				ng-click="clickSquare(cell);" 
 				>	
-				<img ng-src="{{findImg(cell)}}" />
+			<!-- 	<img ng-src="{{findImg(cell)}}" /> -->
 			</div>
 			<div class="clearfix">
 			</div>
