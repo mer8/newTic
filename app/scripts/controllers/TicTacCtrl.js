@@ -39,56 +39,16 @@ angular.module('newTicApp')
       	 $scope.player = "p2";
       	 $scope.gameId = $scope.room.gameId;
       	 $scope.room = {};
+      	 $scope.games[$scope.gameId].waiting = false;
       	 console.log("Player 2's game is: " + $scope.gameId);
 
       }
 
+      // $scope.$watch('hasWon', function() {
+      // 	return hasWon = true;
 
 
-
-
-
-
-
-
-
-
-	// $scope.room = 
-	// {
-	// repeatTicBoard: [[{value:''}, {value:''}, {value:''}],
-	//   [{value:''}, {value:''}, {value:''}],
-	//   [{value:''}, {value:''}, {value:''}]],
-	//   playerTurn: 1,
-	//   hasWon: false,
-	// };
-
-
-
-  
-
-
-
-
-
-
-  
-		 // $scope.findImg = function(cell) 
-		 //  { 
-			// 	switch(cell.value)
-			// 	{
-			// 		case "X":
-			// 		return "images/cat2pic.gif";
-			// 		case "O":
-			// 		return "images/typingcat.gif";
-			// 		case "":
-			// 		return "images/1x1.png";
-			// 	}
-			// };
-
-
-
-
-
+      // };
 
 
 
@@ -169,31 +129,26 @@ var hasWon = false;
 	  	$scope.games[$scope.gameId].playerTurn = 1;
 	  	var hasWon = false;
 		};
-	
-
-
-
-
 
 
 	} //3
 
-$scope.playMove = function (cell) {
-      if ((!$scope.games[$scope.gameId].waiting) && ($scope.player == $scope.games[$scope.gameId].turn)) {
-        // markCell(cell);
-        if ($scope.player == 'p1') {
-          cell.value = 'X';
-        } else {
-          cell.value = 'O';
-        }
-        // swapPlayers();
-        if ($scope.games[$scope.gameId].turn == 'p1') {
-          $scope.games[$scope.gameId].turn = 'p2';
-        } else {
-          $scope.games[$scope.gameId].turn = 'p1';
-        }
-      }
-    };
+// $scope.playMove = function (cell) {
+//       if ((!$scope.games[$scope.gameId].waiting) && ($scope.player == $scope.games[$scope.gameId].turn)) {
+//         // markCell(cell);
+//         if ($scope.player == 'p1') {
+//           cell.value = 'X';
+//         } else {
+//           cell.value = 'O';
+//         }
+//         // swapPlayers();
+//         if ($scope.games[$scope.gameId].turn == 'p1') {
+//           $scope.games[$scope.gameId].turn = 'p2';
+//         } else {
+//           $scope.games[$scope.gameId].turn = 'p1';
+//         }
+//       }
+//     };
 
 
 

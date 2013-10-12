@@ -43,14 +43,14 @@ header {
 }
 
 .x {
-  background-image: url('../../images/cat2pic.gif');
+  background-image: url('http://i1363.photobucket.com/albums/r701/mer831/cat2pic_zpsc1f641a1.gif');
 }
 
 
 
 
 .o {
-  background-image: url('../../images/typingcat.gif');
+  background-image: url('http://i1363.photobucket.com/albums/r701/mer831/typingcat_zps110815fa.gif');
 
 }
 
@@ -67,6 +67,7 @@ header {
   color: #f5f5f5;
   font-size: 20px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  z-index: 1;
 
 }
 
