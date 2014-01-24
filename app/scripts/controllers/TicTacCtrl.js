@@ -5,7 +5,7 @@ angular.module('newTicApp')
 
 
   	$scope.games = [];
-	$scope.room= {};
+	  $scope.room= {};
   	$scope.winmessage = "";
 
 
@@ -22,8 +22,8 @@ angular.module('newTicApp')
 
           var newGame = {
             board: [[{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}],
-	  [{value:''}, {value:''}, {value:''}]],
+            [{value:''}, {value:''}, {value:''}],
+            [{value:''}, {value:''}, {value:''}]],
             turn: 'p1',
             waiting: true,
             hasWon: false,

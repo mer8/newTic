@@ -13,36 +13,16 @@
 				ng-repeat="cell in row"
 				ng-click="clickSquare(cell);" 
 				>	
-			<!-- 	<img ng-src="{{findImg(cell)}}" /> -->
 			</div>
 			<div class="clearfix">
 			</div>
 		</div>
 		<div id="winMessage" class="popup" ng-show="hasWon" ng-model="someone" ng-hide="winmessage==''"> 
-			<!-- <h1>Blah</h1> -->
 			{{ winmessage }}
 			<br><button ng-click="winmessage=''; room.hasWon=false">OK</button>
 		</div>
 		<div id="waiting"  class= "popup" ng-show="games[gameId].waiting"> Please wait for a player...</div>
 	</div>
- 
-<!-- 			<div id="box1_1" class="sqr" onclick="playBox()"></div>
-			<div id="box1_2" class="sqr" onclick="playBox()"></div>
-			<div id="box1_3" class="sqr" onclick="playBox()"></div>
-	  		<div class="clear"></div>
-	  
-			<div id="box2_1" class="sqr" onclick="playBox()"></div>
-			<div id="box2_2" class="sqr" onclick="playBox()"></div>
-			<div id="box2_3" class="sqr" onclick="playBox()"></div>
-	 		<div class="clear"></div>
-	  
-			<div id="box3_1" class="sqr" onclick="playBox()"></div>
-			<div id="box3_2" class="sqr" onclick="playBox()"></div>
-			<div id="box3_3" class="sqr" onclick="playBox()"></div>
-	  		<div class="clear"></div>
-	  		 -->
-	
-
 	<footer>Play right MEOW</footer>
 </div>
 

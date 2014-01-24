@@ -21,16 +21,6 @@ header {
   position: relative;
 }
 
-/*#container {
-  width: 700px;
-  height: 600px;
-  text-align: center;
-  margin: 0 auto;
-  background-color: #FFCCE6;
-  position: relative;
-}*/
-
-
 #gameboard {
   width: 350px;
   height: 350px;
@@ -39,7 +29,6 @@ header {
   padding-left: 33px;
   position: relative;
   background-color: #FFCCE6;
-
 }
 
 .x {
@@ -51,7 +40,6 @@ header {
 
 .o {
   background-image: url('http://i1363.photobucket.com/albums/r701/mer831/typingcat_zps110815fa.gif');
-
 }
 
 .popup {
@@ -68,7 +56,6 @@ header {
   font-size: 20px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   z-index: 1;
-
 }
 
 h1 {
@@ -84,67 +71,6 @@ h1 {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 50px;
 }
-
-/*
-#box1_1 {
-  border-bottom: 6px solid #666666;
-  border-right: 6px solid #666666;
-  margin: 0px;
-
-
-}
-
-#box1_2 {
-  border-bottom: 6px solid #666666;
-  border-right: 6px solid #666666;
-  margin: 0px;
-}
-
-#box1_3 {
-  border-bottom: 6px solid #666666;
-  margin: 0px;
-}
-
-#box2_1  {
-  border-bottom: 6px solid #666666;
-  border-right: 6px solid #666666;
-  margin: 0px;
-
-}
-
-#box2_2 {
-  border-bottom: 6px solid #666666;
-  border-right: 6px solid #666666;
-  margin: 0px;
-
-}
-
-#box2_3 {
-  border-bottom: 6px solid #666666;
-  margin: 0px;
-
-}
-
-#box3_1 {
-  border-right: 6px solid #666666;
-  margin: 0px;
-
-}
-
-#box3_2  {
-  border-right: 6px solid #666666;
-  margin: 0px;
-
-}
-
-#box3_3  {
-  border: none;
-  margin: 0px;
-
-}*/
-
-
-
 
 .clear {
     clear: both;
@@ -170,7 +96,6 @@ footer {
     font-size: 50px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #666666;
-
 }
 
 
